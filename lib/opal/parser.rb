@@ -631,7 +631,9 @@ module Opal
       if str.type == :evstr
         str = s(:dstr, "", str)
       elsif str.type == :str
+        old_str = str
         str = s(:dstr, str[1])
+        str.source = old_str.source
       else
         #puts str.type
       end
