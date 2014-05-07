@@ -588,7 +588,9 @@ module Opal
     end
 
     def new_evstr(str)
-      s(:evstr, str)
+      sexp = s(:evstr, str)
+      sexp.source = str.source
+      sexp
     end
 
     def new_str(str)
