@@ -816,7 +816,7 @@ rule
                     }
                     compstmt kEND
                     {
-                      result = s(:while, val[2], val[5])
+                      result = new_while(val[0], val[2], val[5])
                     }
                 | kUNTIL
                     {
@@ -829,7 +829,7 @@ rule
                     }
                     compstmt kEND
                     {
-                      result = s(:until, val[2], val[5])
+                      result = new_until(val[0], val[2], val[5])
                     }
                 | kCASE expr_value opt_terms case_body kEND
                     {
