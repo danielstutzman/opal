@@ -157,7 +157,7 @@ module Racc
 
         elsif act == -reduce_n
           # reduce
-          raise SyntaxError, "unexpected '#{racc_tok.inspect}'"
+          raise SyntaxError, "unexpected '#{racc_tok.inspect}' on line #{racc_val[1][0]} column #{racc_val[1][1]}"
 
         else
           raise "Rac: unknown action: #{act}"
