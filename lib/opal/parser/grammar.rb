@@ -3211,7 +3211,7 @@ def _reduce_59(val, _values, result)
 end
 
 def _reduce_60(val, _values, result)
-                      result = new_yield val[1]
+                      result = new_yield val[0], val[1]
                     
     result
 end
@@ -4096,19 +4096,19 @@ def _reduce_279(val, _values, result)
 end
 
 def _reduce_280(val, _values, result)
-                      result = new_yield val[2]
+                      result = new_yield val[0], val[2]
                     
     result
 end
 
 def _reduce_281(val, _values, result)
-                      result = s(:yield)
+                      result = new_yield val[0], []
                     
     result
 end
 
 def _reduce_282(val, _values, result)
-                      result = s(:yield)
+                      result = new_yield val[0], []
                     
     result
 end

@@ -556,9 +556,11 @@ module Opal
       sexp
     end
 
-    def new_yield(args)
+    def new_yield(kw, args)
       args ||= []
-      s(:yield, *args)
+      sexp = s(:yield, *args)
+      sexp.source = source(kw)
+      sexp
     end
 
     def new_xstr(start_t, str, end_t)

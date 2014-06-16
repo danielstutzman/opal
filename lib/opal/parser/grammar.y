@@ -234,7 +234,7 @@ rule
                     }
                 | kYIELD command_args
                     {
-                      result = new_yield val[1]
+                      result = new_yield val[0], val[1]
                     }
 
             mlhs: mlhs_basic
@@ -760,15 +760,15 @@ rule
                     }
                 | kYIELD tLPAREN2 call_args tRPAREN
                     {
-                      result = new_yield val[2]
+                      result = new_yield val[0], val[2]
                     }
                 | kYIELD tLPAREN2 tRPAREN
                     {
-                      result = s(:yield)
+                      result = new_yield val[0], []
                     }
                 | kYIELD
                     {
-                      result = s(:yield)
+                      result = new_yield val[0], []
                     }
                 | kDEFINED opt_nl tLPAREN2 expr tRPAREN
                     {
