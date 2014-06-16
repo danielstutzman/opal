@@ -4042,7 +4042,7 @@ def _reduce_270(val, _values, result)
 end
 
 def _reduce_271(val, _values, result)
-                      result = s(:begin, val[2])
+                      result = new_begin(val[0], val[2])
                     
     result
 end

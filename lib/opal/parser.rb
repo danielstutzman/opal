@@ -191,13 +191,14 @@ module Opal
               block
             end
 
-      if comp && comp.type == :begin && comp.size == 2
-        result = comp[1]
-      else
-        result = comp
-      end
-
-      result
+      #if comp && comp.type == :begin && comp.size == 2
+      #  result = comp[1]
+      #else
+      #  result = comp
+      #end
+      #
+      #result
+      comp
     end
 
     def new_body(compstmt, res, els, ens)
@@ -645,6 +646,12 @@ module Opal
 
     def new_str_content(tok)
       s1(:str, value(tok), source(tok))
+    end
+
+    def new_begin(kw, inside)
+      sexp = s(:begin, inside)
+      sexp.source = source(kw)
+      sexp
     end
   end
 end

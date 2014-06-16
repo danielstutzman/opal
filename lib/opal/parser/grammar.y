@@ -724,7 +724,7 @@ rule
                     }
                     bodystmt kEND
                     {
-                      result = s(:begin, val[2])
+                      result = new_begin(val[0], val[2])
                     }
                 | tLPAREN_ARG expr opt_nl tRPAREN
                     {
