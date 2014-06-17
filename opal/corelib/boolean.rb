@@ -32,6 +32,10 @@ class Boolean
   def to_s
     `(self == true) ? 'true' : 'false'`
   end
+
+  def object_id
+    `(self == true) ? 20 : 0`
+  end
 end
 
 TrueClass  = Boolean
