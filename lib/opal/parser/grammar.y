@@ -854,7 +854,7 @@ rule
                     }
                     compstmt kEND
                     {
-                      result = s(:for, val[4], val[1], val[7])
+                      result = new_for(val[0], val[4], val[1], val[7])
                     }
                 | kCLASS cpath superclass
                     {

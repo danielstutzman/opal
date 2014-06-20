@@ -653,5 +653,11 @@ module Opal
       sexp.source = source(kw)
       sexp
     end
+
+    def new_for(kw, *args)
+      sexp = s(:for, *args)
+      sexp.source = source(kw)
+      sexp
+    end
   end
 end

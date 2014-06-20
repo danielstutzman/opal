@@ -4273,7 +4273,7 @@ def _reduce_302(val, _values, result)
 end
 
 def _reduce_303(val, _values, result)
-                      result = s(:for, val[4], val[1], val[7])
+                      result = new_for(val[0], val[4], val[1], val[7])
                     
     result
 end
