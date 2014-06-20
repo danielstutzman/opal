@@ -93,6 +93,28 @@ class Enumerator
     result + ">"
   end
 
+  def next
+    @next_i = 0 if @next_i.nil?
+    if Array === @object
+      if @next_i < @object.size
+        result = @object[@next_i]
+        @next_i += 1
+        result
+      else
+        raise StopIteration
+      end
+    elsif Range === @object
+      result = @object.begin + @next_i
+      @next_i += 1
+      if result > @object.end - (@object.exclude_end? ? 1 : 0)
+        raise StopIteration
+      end
+      result
+    else
+      raise "Not supported"
+    end
+  end
+
   class Generator
     include Enumerable
 
