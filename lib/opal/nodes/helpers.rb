@@ -6,7 +6,7 @@ module Opal
       # same name (ref: http://stackoverflow.com/a/9337272/601782)
       ES51_RESERVED_WORD = /^(?:do|if|in|for|let|new|try|var|case|else|enum|eval|false|null|this|true|void|with|break|catch|class|const|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof)$/
 
-      # ES3 reserved words that aren’t ES5.1 reserved words
+      # ES3 reserved words that aren't ES5.1 reserved words
       ES3_RESERVED_WORD_EXCLUSIVE = /^(?:int|byte|char|goto|long|final|float|short|double|native|throws|boolean|abstract|volatile|transient|synchronized)$/
 
       # Immutable properties of the global object
