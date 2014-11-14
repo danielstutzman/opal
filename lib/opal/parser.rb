@@ -150,6 +150,7 @@ module Opal
       else
         sexp = s(:break, s(:array, *args))
       end
+      sexp.source = source(kw)
 
       sexp
     end
