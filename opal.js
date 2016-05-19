@@ -8341,12 +8341,13 @@ Opal.modules["corelib/string"] = function($opal) {
 
       escapable.lastIndex = 0;
 
-      return escapable.test(self) ? '"' + self.replace(escapable, function(a) {
+      var temp = escapable.test(self) ? '"' + self.replace(escapable, function(a) {
         var c = meta[a];
 
         return typeof c === 'string' ? c :
           '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
       }) + '"' : '"' + self + '"';
+      return temp.replace(/\#[\$\@\{]/g,"\\$&");
     
     };
 
